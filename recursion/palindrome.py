@@ -14,6 +14,7 @@ def is_palindrome_u(s: str, start: int, end: int) -> bool:
     if start >= end:
         return True
 
+    # The string comparison before and operator acts as a circuit breaker
     return (s[start] == s[end]) and is_palindrome_u(s, start + 1, end - 1)
 
 
