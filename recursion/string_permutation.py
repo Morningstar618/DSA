@@ -1,3 +1,11 @@
+"""
+Print all Permutations of a String
+
+I/p: s = "ABC"
+O/p: ABC ACB BAC BCA CAB CBA
+"""
+
+
 def permute(s: str, i: int = 0):
     if i == len(s) - 1:
         print(s)
