@@ -1,5 +1,10 @@
 """
 Reverse an array
+
+Another approach:
+    Use low and high vars. Define them outside the loop.
+    Each iteration swap low with high and increment the
+    former while decrementing the latter.
 """
 
 def reverse_array(arr: list) -> list:
