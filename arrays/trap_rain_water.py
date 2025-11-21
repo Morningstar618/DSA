@@ -6,8 +6,16 @@ o/p: 6
 
 i/p: [3, 2, 1]
 o/p: 0
+
+Approach:
+    Precompute the lmax and rmax for each column (element).
+    Then find the minimum between lmax and rmax and subtract
+    the value of column from it. Add the result cumulatively 
+    to a var. Do it for all the columns between i=0 and 
+    i=len(levels)-1.
 """
 
+# Time - Theta(n)
 def max_water(levels: list) -> int:
     res = 0
     length = len(levels)
