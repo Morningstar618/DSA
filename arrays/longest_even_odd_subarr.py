@@ -23,10 +23,9 @@ def max_even_odd(nums: list) -> int:
         curr = nums[i] % 2
         if prev != curr:
             count += 1
+            res = max(res, count)
         else:
             count = 1
-
-        res = max(res, count)
 
     return res
 
@@ -34,4 +33,4 @@ def max_even_odd(nums: list) -> int:
 if __name__ == '__main__':
     print(max_even_odd([10, 12, 14, 7, 8])) # 3
     print(max_even_odd([7, 10, 13, 14]))    # 4
-    print(max_even_odd([10, 12, 8, 4]))     # 0
+    print(max_even_odd([10, 12, 8, 4]))     # 1
