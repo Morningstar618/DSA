@@ -23,14 +23,15 @@ o/p: False
 
 def eq_point(nums: list) -> bool:
     l_sum = 0
-    r_sum = sum(nums[1:])
+    r_sum = sum(nums)
 
     for i in range(len(nums)):
+        r_sum -= nums[i]
+
         if l_sum == r_sum:
             return True
         
         l_sum += nums[i]
-        r_sum -= nums[i + 1] if i < len(nums) - 1 else 0
 
     return False
 
