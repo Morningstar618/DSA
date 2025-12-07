@@ -1,0 +1,39 @@
+"""
+Find the last occurrence of `k` in a sorted array.
+If the element is not found, return -1.
+
+Approach: Binary search
+
+Time -> O(logn), Space -> O(1)
+
+i/p: [1, 10, 10, 10, 20, 20, 40], k=20
+o/p: 5
+"""
+
+def find(nums: list, k: int) -> int:
+    """Find last occurrence of 'k'
+    in 'nums'"""
+    s = 0
+    e = len(nums) - 1
+    m = int((s + e) / 2)
+
+    while s <= e:
+        if nums[m] == k and m == len(nums) - 1 or nums[m] == k and nums[m + 1] != k:
+            return m
+
+        if nums[m] > k:
+            e = m - 1
+        else:
+            s = m + 1
+
+        m = int((s + e) / 2)
+
+    return -1
+
+
+if __name__ == '__main__':
+    nums1 = [1, 10, 10, 10, 20, 20, 40]
+
+    print(find(nums1, 20))      # 5
+    print(find(nums1, 50))      # -1
+    print(find([1, 1, 1], 1))   # 2
