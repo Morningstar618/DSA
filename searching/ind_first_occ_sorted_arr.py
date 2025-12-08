@@ -22,7 +22,7 @@ def find(nums: list, k: int) -> int:
             return m
 
         if nums[m] >= k:
-            e = m - 1
+            e = m
         else:
             s = m + 1
 
