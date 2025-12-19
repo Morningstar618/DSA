@@ -1,6 +1,0 @@
-cmake_minimum_required(VERSION 3.31)
-project(First_and_Last_index_of_element_in_sorted_array)
-
-set(CMAKE_CXX_STANDARD 20)
-
-add_executable(First_and_Last_index_of_element_in_sorted_array main.cpp)
