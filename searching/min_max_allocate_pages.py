@@ -7,6 +7,8 @@ Approach: Using Binary Search to find the optimal maximum pages
 that can be allocated to a student.
 
 NOTE: Good Problem for understanding Binary Search on Answer Space.
+
+Time Complexity: O(N log M) where N is the number of books and M is the sum of pages in all books.
 """
 
 def is_possible(books: list, students: int, max_pages: int) -> bool:
