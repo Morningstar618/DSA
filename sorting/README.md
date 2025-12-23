@@ -91,3 +91,9 @@ An unstable order won't care of the order -> **[("Piyush", 50), ("Anil", 50), ("
 - Selection sort
 - Quick sort
 - Heap sort
+
+
+## Bubble sort
+Bubble sort is a simple comparison based algorithm and take `O(n^2)` time. Bubble sort has multiple passes. In the first
+pass, we move the largest element to the last position. In the second pass we move the second largest element to the second
+last position. We keep doing it until all the elements are moved to their correct positions.
