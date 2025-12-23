@@ -66,3 +66,28 @@ Most of the library functions, they use a hybrid sorting algorithm, a sorting al
 - **Tim sort** -> used in python, its a `mix of insertion sort and merge sort`. It uses merge sort for general purpose data and when the array size is small or becomes small during recursive calls, it switches to insertion sort.
 
 - **Intro sort** -> it's a mix of quick sort, heap sort and insertion sort. In general it uses quick sort, and when your quick sort is doing many unfair partitioning and the number of recursion calls are going beyond logn, it switches to heap sort. And when the array size becomes small, it switches to insertion sort.
+
+
+## Stability
+Stability in sorting means to preserve the order of the items in the original array after sorting. Its important only when we have an
+object associated with the sorted value.
+
+Consider this example -> **[("Anil", 50), ("Ayan", 80), ("Piyush", 50), ("Ramesh", 80)]**
+After sorting this will be -> **[("Anil", 50), ("Piyush", 50), ("Ayan", 80), ("Ramesh", 80)]**
+
+Note that the order was maintained, i.e. Anil's order and the others order was maintained during the sort as it was in the original
+array.
+
+Stability is not important when we are sorting an array of integer values or other scalar values.
+
+An unstable order won't care of the order -> **[("Piyush", 50), ("Anil", 50), ("Ayan", 80), ("Ramesh", 80)]**
+
+### Stable sorting algorithms
+- Bubble sort
+- Insertion sort
+- Merge sort
+
+### Unstable sorting algorithms
+- Selection sort
+- Quick sort
+- Heap sort
