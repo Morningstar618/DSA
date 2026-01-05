@@ -25,12 +25,12 @@ def merge_sort(arr):
     """
     if len(arr) <= 1:
         return arr
-    
+
     # Divide
     mid = len(arr) // 2
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
-    
+
     # Conquer (merge)
     return merge(left, right)
 
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         [3, 3, 3, 1, 2, 1]
     ]
 
-    for arr in test_arrays:
-        print(f"Original: {arr}")
-        print(f"Sorted:   {merge_sort(arr)}")
+    for array in test_arrays:
+        print(f"Original: {array}")
+        print(f"Sorted:   {merge_sort(array)}")
         print()
