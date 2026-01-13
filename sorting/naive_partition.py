@@ -2,6 +2,8 @@
 Naive partition quick sort implementation.
 
 Time -> O(n), Space -> O(n)
+
+Stable partition algorithm
 """
 
 def naive(arr: list, low: int, high: int, pivot_index: int):

@@ -9,6 +9,8 @@ In case you pant to partition the array on a specific
 index, just swap it with the last element of the array.
 
 Time -> O(n), Space -> O(1)
+
+Unstable partition algorithm
 """
 
 def lomuto(arr: list, high: int, low: int=0) -> int:
