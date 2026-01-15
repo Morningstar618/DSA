@@ -15,3 +15,39 @@
    fastest algorithm which is used in libraries also. But
    if stability is required, then merge sort is preferred.
 """
+
+def lomuto(arr: list, low: int, high: int) -> int:
+    """Lomuto partition"""
+
+    # Helper ---------------------------------------
+    def swap(arr: list, x: int, y: int):
+        temp = arr[x]
+        arr[x] = arr[y]
+        arr[y] = temp
+
+    # Lomuto ---------------------------------------
+    pos = low - 1
+
+    for i in range(low, high):
+        if arr[i] < arr[high]:
+            pos += 1
+            swap(arr, i, pos)
+
+    pos += 1
+    swap(arr, pos, high)
+
+    return pos
+
+
+def quick_sort_lomuto(arr: list, low: int, high: int):
+    "Quick sort using Lomuto"
+    if low < high:
+        p = lomuto(arr, low, high)
+        quick_sort_lomuto(arr, low, p - 1)
+        quick_sort_lomuto(arr, p + 1, high)
+
+
+if __name__ == '__main__':
+    nums = [8, 4, 7, 9, 3, 10, 5]
+    quick_sort_lomuto(nums, 0, len(nums) - 1)
+    print(nums)
