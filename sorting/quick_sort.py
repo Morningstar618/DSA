@@ -64,15 +64,20 @@ def hoare(arr: list, low: int, high: int):
         arr[i], arr[j] = arr[j], arr[i]
 
 
-def quick_sort(arr: list, low: int, high: int):
-    "Quick sort using Lomuto"
+def quick_sort(arr: list, low: int, high: int, partition: str='hoare'):
+    "Quick sort"
     if low < high:
-        p = hoare(arr, low, high)
-        quick_sort(arr, low, p)
-        quick_sort(arr, p + 1, high)
+        if partition == 'hoare':
+            p = hoare(arr, low, high)
+            quick_sort(arr, low, p)
+            quick_sort(arr, p + 1, high)
+        else:
+            p = lomuto(arr, low, high)
+            quick_sort(arr, low, p - 1)
+            quick_sort(arr, p + 1, high)            
 
 
 if __name__ == '__main__':
     nums = [8, 4, 7, 9, 3, 10, 5]
-    quick_sort(nums, 0, len(nums) - 1)
+    quick_sort(nums, 0, len(nums) - 1, 'lomuto')
     print(nums)
