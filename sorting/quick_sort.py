@@ -39,15 +39,40 @@ def lomuto(arr: list, low: int, high: int) -> int:
     return pos
 
 
-def quick_sort_lomuto(arr: list, low: int, high: int):
+def hoare(arr: list, low: int, high: int):
+    "Hoare partition implementation"
+    pivot = arr[low]
+    i = low - 1
+    j = high + 1
+
+    while True:
+        # Move i to the right; stops when it finds an element >= pivot
+        i += 1
+        while arr[i] < pivot:
+            i += 1
+
+        # Move j to the left; stops when it finds an element <= pivot
+        j -= 1
+        while arr[j] > pivot:
+            j -= 1
+
+        # If pointers cross, return the split point
+        if i >= j:
+            return j
+
+        # Swap the elements to put them on the correct sides
+        arr[i], arr[j] = arr[j], arr[i]
+
+
+def quick_sort(arr: list, low: int, high: int):
     "Quick sort using Lomuto"
     if low < high:
-        p = lomuto(arr, low, high)
-        quick_sort_lomuto(arr, low, p - 1)
-        quick_sort_lomuto(arr, p + 1, high)
+        p = hoare(arr, low, high)
+        quick_sort(arr, low, p)
+        quick_sort(arr, p + 1, high)
 
 
 if __name__ == '__main__':
     nums = [8, 4, 7, 9, 3, 10, 5]
-    quick_sort_lomuto(nums, 0, len(nums) - 1)
+    quick_sort(nums, 0, len(nums) - 1)
     print(nums)
