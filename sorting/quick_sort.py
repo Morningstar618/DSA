@@ -14,6 +14,13 @@
 5. If we don't need stability, quick sort is actually the
    fastest algorithm which is used in libraries also. But
    if stability is required, then merge sort is preferred.
+6. In general, a random pivot is selected when implementing
+   the algorithm in a standard library function. This is so
+   because if the array is already sorted and we use quick
+   sort, then we get the worst time complexity i.e. O(n^2),
+   but by selecting the pivot at random, we normalize it.
+   NOTE: Worst time complexity is when the partition is done
+   in the following way: [x1, x2,.....xn] -> [x1], [x2...xn].
 """
 
 def lomuto(arr: list, low: int, high: int) -> int:
